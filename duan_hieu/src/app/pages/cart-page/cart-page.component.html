@@ -1,0 +1,112 @@
+<div>
+  <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="ml-8">
+        <a href="https://flowbite.com/" class="">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEX///8AAAD8/PwEBAT19fXw8PDn5+e9vb3U1NRPT09eXl5ra2uGhobExMTj4+Ps7OyqqqrNzc2YmJh+fn4iIiKioqLc3NzKyso5OTkMDAxWVlYnJye4uLiTk5NycnIxMTFBQUFISEgWFhZ4eHg8PDxcXFyEhIQbGxumpqYsLCwkJCQF7wMnAAAEX0lEQVR4nO3caXObQAwGYFbgMz7jI3brM0lz/f8fWLCDdx2DhGMbLZ73+dSZ0laKAC3anQYBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3CHSDuDGeg3tCG6JgqhjTO2eizgwsRftKG6D4sINZ2Znqh3MjdTbxoS7DFvaodxEtEzy22UYmnt82Sz21fs2v7t3TXNr0jt0b6kd0XXVHsyJvnZQ1/R4XL69B+2oriR+3Brz0wImhtqxXcm0lZ2fMRvt0K4iesnLLzao/gqcJibrCTyItAO82JQpYKKjHeDlRkKKde0ALxYJGf7RDvByAyHFrnaAl6LgL5dfaNbaEV5uKBRxoh3g5TJWpEdq2gFerM7mF5pR9dt+Ryhi9Qca9MxneAcDjYVQxDsYaLzyGc614/sVCqb2868pFLGSAw0amc/0lxSshBQrtjxNBr+7xdrk0Af6QoYr1YB/YbiOG13oNvNHNsHQNBWjPU9StF47jdzZnRjzRXxVi/h81HG+6m0zbwj36UIx5PMs5u7YYmt/o8VNM+I/U5GBRnP2I3DbzHt8hqZTheVp//QzYpyGTZUfaFBAy6y4bTOvCRm2FaMvZJHztrS7ExMhxSfF6AXxnTjd5MX9YK9a84/il8dPYm3FzH3TZk5BVyjiQDUJBvG338yW5p+Qoq8DDb6Zh3Z3gviBRrIG8vI+pWDLxz23HaPDPomh6almkk/anXg7XFnZEfibELht5lUdaPClCd1mvuU7xrteErzizZwfgYf+jsB/rrh/+LRXSiNwX09oPAlxD6o/0GgLgdvPv6XwGdX0sykKuxPGjL6vi79Bcs6epDaKWbCW7JEEO9AgcaDh6/I0EjJs2Zsv94DN3rNXd2ndrrP4Zu4et5TWQN6MwCk5MOpsHOV+Iu45A40X4WVT96WKjXfjrrOK7meTuDz1YKCRDO53B0bjdZb9ea+E0vQPj6K0Bhp60DGS82rhUWkCkmZN9rglsSc0kjWQboZ0/FlfdHfCOLsT/BooNB8aeTm6Yzcau84iYXdiY/8KaaChNwKP757eUT8L3dIU353oCVe+Zf3j5YhOZ9eH3QmSmrlzQN/bExofXGnojGYufTVrDDTin/9TzjvQlkbenUiv9fFMX6+dt/Y8lIbOaObCV/O43OTiH3zEPTl21pR5GzuKntAIzWO5CdKAPdnklOaTz3Bmr/TrTJ/01NjSDIXPKHtCQ+oYZQ404piEddbMXsoONOLko8N7SV4Dlbl4K75xxJcmdJq5dKZvW+7yVJ41peFkbgY77EBDGoGXe0JDemrsUQNp1pR+NZNvA43i66zizVxeA5WZYySUJl1nxTGt+Su/3K9mXtkdI2T7QPfwA5eOW9pm7tVAg8TS2GuLN3O/TmgULg0V352QBhqzzEhupvjGkdTM0zWQdyNw7s1GRHYkGlDBS4X/5+ToSgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEr7D0b6KSIFBl4TAAAAAElFTkSuQmCC"
+            class="h-[100px] w-[100px] " alt="Flowbite Logo" />
+        </a>
+      </div>
+      <div class="flex md:order-2 ">
+        <div class="p-1.5 mr-7 flex gap-2">
+          <div *ngIf="user;else loginLogo">
+            <img src="{{user.user.avt}}" class="border rounded-lg w-[40px] h-[40px]" alt="">
+            <button class="hover:bg-black hover:text-white" (click)="logout()">Logout</button>
+          </div>
+          <ng-template #loginLogo>
+            <mat-icon class="cursor-pointer" routerLink="/login">account_circle</mat-icon>
+          </ng-template>
+          <mat-icon routerLink="/cart" class="cursor-pointer">shopping_cart_border</mat-icon>
+          <mat-icon class="cursor-pointer">favorite_border</mat-icon>
+        </div>
+        <button data-collapse-toggle="navbar-search" type="button"
+          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-search" aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+        <div class="relative mt-3 md:hidden">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <input type="text" id="search-navbar"
+            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search...">
+        </div>
+
+        <ul
+          class="flex text-lg flex-col gap-10 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1  py-2 pl-3 pr-4 rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/products">Products</a>
+          </li>
+
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/about">About</a>
+          </li>
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/blog">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="container mx-auto ">
+  <div class="ml-32 gap-[700px] flex">
+    <div>
+      <p class="text-3xl font-semibold ">MY CART</p>
+      <p class="text-xl font-medium">Đơn trong tay chốt ngay kẻo lỡ</p>
+    </div>
+    <div><button type="button"
+        class="text-white bg-black hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center h-[60px] w-[300px] dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        THANH TOÁN
+        <svg class="ml-20" aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button></div>
+  </div>
+
+  <div *ngFor="let cartItem of cartItems" class="">
+
+    <div class=" flex border gap-8 w-[1000px] ml-32 mt-10">
+      <img src="{{cartItem.image}}" width="250px" height="250px" alt="Apple Watch">
+      <div>
+        <p class="text-xl pt-6">{{cartItem.name}}</p>
+        <p class="text-xl pt-6"> Quantily: {{cartItem.quantity}}</p>
+        <p class="text-xl pt-6"> Price: {{cartItem.price}}$</p>
+      </div>
+      <div>
+        <p class="text-xl pt-6">Total: {{cartItem.price*cartItem.quantity}}$</p>
+      </div>
+      <div> <button class="mt-6 text-xl font-extrabold" (click)="deleteCartItem(cartItem._id)">X</button></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<!-- <div class="p-4 sm:ml-64 mt-20">
+
+<form (ngSubmit)="onSubmit()" [formGroup]="formProduct">
+    <div>
+        <label for="">name</label>
+        <input type="text" formControlName="name">
+        <p
+      class="text-red-500"
+      *ngIf="formProduct.get('name')?.errors?.['required']"
+    >
+      Vui long nhap truong nay
+    </p>
+    </div>
+    <div>
+        <label for="">categoryId</label>
+        <select formControlName="categoryId">
+            <option *ngFor="let category of categories" [value]="category._id">{{category.name}}</option>
+        </select>
+    </div>
+    <div>
+        <label for="">image</label>
+        <input type="text" formControlName="image">
+       
+    </div>
+    <div>
+        <label for="">price</label>
+        <input type="number" formControlName="price">
+    </div>
+    <div>
+        <label for="">desc</label>
+        <input type="text" formControlName="desc">
+    </div>
+    <button class="cursor-pointer" type="submit" [disabled]="!formProduct.valid">
+        add
+    </button>
+</form></div> -->
+
+<div class="pl-14">
+    <div class="p-4 sm:ml-64 mt-20">
+        <form (ngSubmit)="onSubmit()" [formGroup]="formProduct">
+            <div class="mb-6">
+                <label for="username-success"
+                    class="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Your name</label>
+                <input type="text" id="username-success" formControlName="name"
+                    class="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-[300px] p-2.5 dark:bg-green-100 dark:border-green-400"
+                    placeholder="Name">
+                <p class="text-red-500" *ngIf="formProduct.get('name')?.errors?.['required']">
+                    Vui long nhap truong nay
+                </p>
+            </div>
+            <div>
+                <label for="username-success"
+                class="text-sm font-medium text-green-700 dark:text-green-500">categoryId</label> <br>
+                <select formControlName="categoryId" class="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-[300px] p-2.5 dark:bg-green-100 dark:border-green-400">
+                    <option *ngFor="let category of categories" [value]="category._id">{{category.name}}</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="username-success"
+                    class="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Price</label>
+                <input type="text" id="username-success" formControlName="price"
+                    class="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-[300px] p-2.5 dark:bg-green-100 dark:border-green-400"
+                    placeholder="Price">
+                    <p class="text-red-500" *ngIf="formProduct.get('price')?.errors?.['required']">
+                        Vui long nhap truong nay
+                    </p>
+                    <p class="text-red-500" *ngIf="formProduct.get('price')?.errors?.['min']">
+                        Vui long nhap gia lon hon 0
+                    </p>
+            </div>
+
+            <div class="mb-6">
+                <label for="username-success"
+                    class="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Image</label>
+                <input type="text" id="username-success" formControlName="image"
+                    class="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-[300px] p-2.5 dark:bg-green-100 dark:border-green-400"
+                    placeholder="Image">
+            </div>
+
+            <div class="mb-6">
+                <label for="username-success"
+                    class="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Description</label>
+                <input type="text" id="username-success" formControlName="desc"
+class="bg-green-50 border border-green-500 text-green-900 placeholder-green-700 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-[300px] p-2.5 dark:bg-green-100 dark:border-green-400"
+                    placeholder="Description">
+            </div>
+
+            <button class="px-4 py-2 bg-teal-600 rounded-lg"  type="submit" [disabled]="!formProduct.valid">
+                ADD
+            </button>
+        </form>
+    </div>
+</div>

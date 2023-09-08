@@ -1,0 +1,267 @@
+<!-- HEADER -->
+<div>
+  <link rel="stylesheet" href="home.component.scss">
+  <nav class="bg-white border-gray-200 dark:bg-gray-900" id="menu-client">
+    <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="ml-8">
+        <a href="https://flowbite.com/" class="">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEX///8AAAD8/PwEBAT19fXw8PDn5+e9vb3U1NRPT09eXl5ra2uGhobExMTj4+Ps7OyqqqrNzc2YmJh+fn4iIiKioqLc3NzKyso5OTkMDAxWVlYnJye4uLiTk5NycnIxMTFBQUFISEgWFhZ4eHg8PDxcXFyEhIQbGxumpqYsLCwkJCQF7wMnAAAEX0lEQVR4nO3caXObQAwGYFbgMz7jI3brM0lz/f8fWLCDdx2DhGMbLZ73+dSZ0laKAC3anQYBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3CHSDuDGeg3tCG6JgqhjTO2eizgwsRftKG6D4sINZ2Znqh3MjdTbxoS7DFvaodxEtEzy22UYmnt82Sz21fs2v7t3TXNr0jt0b6kd0XXVHsyJvnZQ1/R4XL69B+2oriR+3Brz0wImhtqxXcm0lZ2fMRvt0K4iesnLLzao/gqcJibrCTyItAO82JQpYKKjHeDlRkKKde0ALxYJGf7RDvByAyHFrnaAl6LgL5dfaNbaEV5uKBRxoh3g5TJWpEdq2gFerM7mF5pR9dt+Ryhi9Qca9MxneAcDjYVQxDsYaLzyGc614/sVCqb2868pFLGSAw0amc/0lxSshBQrtjxNBr+7xdrk0Af6QoYr1YB/YbiOG13oNvNHNsHQNBWjPU9StF47jdzZnRjzRXxVi/h81HG+6m0zbwj36UIx5PMs5u7YYmt/o8VNM+I/U5GBRnP2I3DbzHt8hqZTheVp//QzYpyGTZUfaFBAy6y4bTOvCRm2FaMvZJHztrS7ExMhxSfF6AXxnTjd5MX9YK9a84/il8dPYm3FzH3TZk5BVyjiQDUJBvG338yW5p+Qoq8DDb6Zh3Z3gviBRrIG8vI+pWDLxz23HaPDPomh6almkk/anXg7XFnZEfibELht5lUdaPClCd1mvuU7xrteErzizZwfgYf+jsB/rrh/+LRXSiNwX09oPAlxD6o/0GgLgdvPv6XwGdX0sykKuxPGjL6vi79Bcs6epDaKWbCW7JEEO9AgcaDh6/I0EjJs2Zsv94DN3rNXd2ndrrP4Zu4et5TWQN6MwCk5MOpsHOV+Iu45A40X4WVT96WKjXfjrrOK7meTuDz1YKCRDO53B0bjdZb9ea+E0vQPj6K0Bhp60DGS82rhUWkCkmZN9rglsSc0kjWQboZ0/FlfdHfCOLsT/BooNB8aeTm6Yzcau84iYXdiY/8KaaChNwKP757eUT8L3dIU353oCVe+Zf3j5YhOZ9eH3QmSmrlzQN/bExofXGnojGYufTVrDDTin/9TzjvQlkbenUiv9fFMX6+dt/Y8lIbOaObCV/O43OTiH3zEPTl21pR5GzuKntAIzWO5CdKAPdnklOaTz3Bmr/TrTJ/01NjSDIXPKHtCQ+oYZQ404piEddbMXsoONOLko8N7SV4Dlbl4K75xxJcmdJq5dKZvW+7yVJ41peFkbgY77EBDGoGXe0JDemrsUQNp1pR+NZNvA43i66zizVxeA5WZYySUJl1nxTGt+Su/3K9mXtkdI2T7QPfwA5eOW9pm7tVAg8TS2GuLN3O/TmgULg0V352QBhqzzEhupvjGkdTM0zWQdyNw7s1GRHYkGlDBS4X/5+ToSgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEr7D0b6KSIFBl4TAAAAAElFTkSuQmCC"
+            class="h-[100px] w-[100px] " alt="Flowbite Logo" />
+        </a>
+      </div>
+      <div class="flex md:order-2 ">
+        <div class="p-1.5 mr-7 flex gap-2">
+          <div *ngIf="user;else loginLogo">
+            <p>{{user.user.name}}</p>
+            <button (click)="logout()">Logout</button>
+          </div>
+          <ng-template #loginLogo>
+            <mat-icon class="cursor-pointer" routerLink="/login">account_circle</mat-icon>
+          </ng-template>
+          <mat-icon class="cursor-pointer">shopping_cart_border</mat-icon>
+          <mat-icon class="cursor-pointer">favorite_border</mat-icon>
+        </div>
+        <button data-collapse-toggle="navbar-search" type="button"
+          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-search" aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+        <div class="relative mt-3 md:hidden">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <input type="text" id="search-navbar"
+            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search...">
+        </div>
+
+        <ul
+          class="flex text-lg flex-col gap-10 p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1  py-2 pl-3 pr-4 rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/products">Products</a>
+          </li>
+
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/about">About</a>
+          </li>
+          <li>
+            <a href="#"
+              class="hover:bg-teal-800 hover:text-white hover:text-2xl hover:px-7 hover:py-1 py-2 pl-3 pr-4  rounded-xl md:bg-transparent no-underline md:text-black md:p-0 md:dark:text-blue-500 hover:ease-in duration-300 ..."
+              aria-current="page" routerLink="/blog">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<section id="home-section">
+  <div class="container  mx-auto">
+    <div class="banner ">
+      <img
+        src="https://r4.wallpaperflare.com/wallpaper/43/712/919/adidas-logo-paint-splatter-wallpaper-19f0d80d219a5d7b7697381f40a1267d.jpg"
+        class=" w-full h-[570px]" alt="">
+    </div>
+    <div class="text-center text-3xl font-sans font-bold mt-5">
+      <p>Who are you shopping for?</p>
+    </div>
+    <div class="container  mx-auto">
+
+      <div class="grid mx-44  gap-5 grid-cols-4 justify-items-center ">
+        <div *ngFor="let product of products  " class=" my-3 " style="width: 18rem">
+          <div class=" border ">
+            <img src="{{ product.image }}" alt="" class=" object-center	" />
+            <a [routerLink]="['/product/', product._id]" class="btn btn-primary">Chi tiết</a>
+            <div class="">
+              <h5 class="font-sans text-sm font-semibold text-gray-800 mt-3">{{ product.name }}</h5>
+              <p class="card-text font-light ">Price: {{ product.price }}</p>
+              <div class=" flex flex-col items-center ">
+                <button (click)="addToCart(product)" type="button"
+                  class=" hover:border mt-3 text-white bg-black hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  <svg aria-hidden="true" class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+                    </path>
+                  </svg>
+                  Buy now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w-full flex mx-auto bg-yellow-50 justify-center gap-[60px] mt-10 pt-[50px]">
+      <div class="content">
+        <p class="text-4xl font-semibold">Stories, style, <br> and sporting goods at <br> adidas, since 1949</p>
+        <p>Through sports, we have the power to change lives. Sports keep us fit. They keep <br> us mindful. They bring
+          us together. Athletes inspire us. They help us to get up and
+          <br>get moving. And sporting goods featuring the latest technologies help us beat our <br>personal best.
+          adidas is home to the runner, the basketball player, the soccer kid,
+          <br>the fitness enthusiast, the yogi. And even the weekend hiker looking to escape the <br> city. The
+          3-Stripes are everywhere and anywhere. In sports. In music. On life’s
+          <br> stages. Before the whistle blows, during the race, and at the finish line. We’re here <br> to support
+          creators. To improve their game. To live their lives. And to change the
+          <br>world <br>
+          <br>get moving. And sporting goods featuring the latest technologies help us beat our <br>personal best.
+          adidas is home to the runner, the basketball player, the soccer kid,
+          <br>the fitness enthusiast, the yogi. And even the weekend hiker looking to escape the <br> city. The
+          3-Stripes are everywhere and anywhere. In sports. In music. On life’s
+          <br> stages. Before the whistle blows, during the race, and at the finish line. We’re here <br> to support
+          creators. To improve their game. To live their lives. And to change th
+
+        </p>
+      </div>
+      <div class="content">
+        <p class="text-4xl font-semibold">Workout clothes, for <br>any sport <br><br>
+        <p>adidas designs for athletes of all kinds. Creators who love to change the game. <br> People who challenge
+          conventions, break the rules, and define new ones. Then
+          <br>break them all over again. We design sports apparel that gets you moving, <br>winning, and living life to
+          the fullest. We create bras and tights for female athletes
+          <br>who play just as hard as the men. From low to high support. Maximum comfort. We<br> design, innovate and
+          iterate. We test new technologies in action. On the field, the
+          <br> stages. Before the whistle blows, during the race, and at the finish line. We’re here <br> to support
+          creators. To improve their game. To live their lives. And to change the
+          <br>world
+        </p>
+      </div>
+    </div>
+    <div class="w-full flex h-[120px] gap-6  bg-yellow-300 text-center items-center justify-center align-middle">
+      <p class="text-4xl font-semibold pt-[15px]">JOIN OUR ADICLUB & GET 15% OFF</p>
+      <button class="w-[350px] h-[55px] bg-black text-white text-lg" routerLink="/register"> SIGN UP FOR FREE </button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div class="">
+  <footer class="container mx-auto w-[1200px] p-7  bg-gray-200">
+    <div class="grid grid-cols-6">
+      <div>
+        <p class="font-bold">PRODUCTS</p>
+        <p class="mt-5">
+          Shoes <br>
+          Clothing <br>
+          Accessories <br>
+          New Arrivals <br>
+          Release Dates <br>
+          Top Sellers <br>
+          Outlet <br>
+        </p>
+      </div>
+      <div>
+        <p class="font-bold">SPORTS</p>
+        <p class="mt-5">
+          Football <br>
+          Basketball <br>
+          Golf <br>
+          Gym & Training <br>
+          Outdoor <br>
+          Rugby <br>
+          Running <br>
+          Tennis <br>
+        </p>
+      </div>
+      <div>
+        <p class="font-bold">COLLECTIONS</p>
+        <p class="mt-5">
+          Originals <br>
+          IVY PARK <br>
+          Ultraboost <br>
+          NMD <br>
+          Gazelle <br>
+          Superstar <br>
+          Ozweego <br>
+        </p>
+      </div>
+      <div>
+        <p class="font-bold">SUPPORT</p>
+        <p class="mt-5">
+          Help <br>
+          Returns & Refunds <br>
+          Delivery <br>
+          Size Charts <br>
+          Student discount <br>
+          European Disputes <br>
+          European Disputes <br>
+          Imprint <br>
+          Modern Slavery Act Transparency <br>
+        </p>
+      </div>
+      <div>
+        <p class="font-bold">COMPANY INFO</p>
+        <p class="mt-5">
+          About Us <br>
+          Careers <br>
+          Press <br>
+          Mobile Apps <br>
+          adidas Confirmed <br>
+          adidas Blog <br>
+          adidas News <br>
+          Affiliate Program <br>
+          Location Selector <br>
+        </p>
+      </div>
+      <div>
+        <p class="font-bold">FOLLOW US</p>
+        <div class="">
+          <img
+            src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/NEWfacebook_image_footer_tcm143-875964.png"
+            class="py-2" alt="">
+          <img
+            src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/NEWinstagram_logo-footer_tcm143-875968.png"
+            class="py-1" alt="">
+          <img
+            src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/NEWtiktok-black-share-icon1189_tcm143-875969.png"
+            class="py-2" alt="">
+          <img
+            src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/NEWyoutube_icon_footer_tcm143-875967.png"
+            class="py-1" alt="">
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <div class="bg-gray-700 h-20">
+    <div class="pt-8 text-center flex gap-2 justify-center">
+      <button class="text-white text-xs">Cookie Settings</button>
+      <p class="text-white">|</p>
+      <button class="text-white text-xs">Data Settings</button>
+      <p class="text-white">|</p>
+      <button class="text-white text-xs">Privacy Centre</button>
+      <p class="text-white">|</p>
+      <button class="text-white text-xs">Cookies</button>
+      <p class="text-white">|</p>
+      <button class="text-white text-xs">Privacy Notice</button>
+      <p class="text-white">|</p>
+      <button class="text-white text-xs">Terms and Conditions</button>
+    </div>
+  </div>
+</div>
